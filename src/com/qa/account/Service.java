@@ -1,6 +1,11 @@
 package com.qa.account;
 
 import java.util.HashMap;
+import java.io.File;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import org.json.JSONObject;
 
 public class Service {
 
@@ -24,5 +29,25 @@ public class Service {
 		return hmap;
 	}
 	
+	public JSONObject json(HashMap<Integer, Account> h) {
+		
+		return new JSONObject(h);
+		
+		
+	}
 	
+//	public void xml(Account account) {
+//		try {
+//            JAXBContext context = JAXBContext.newInstance(Account.class);
+//            Marshaller m = context.createMarshaller();
+//
+//            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+//
+//       
+//            m.marshal(account, new File("test"));
+//        } catch (JAXBException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
 }

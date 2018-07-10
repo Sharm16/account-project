@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.qa.account.Account;
@@ -9,10 +10,12 @@ import com.qa.account.Service;
 
 public class test {
 
+	Service s = new Service();
+	
 	@Test
 	public void accountTest() {
 
-		Service s = new Service();
+		
 		Account account = new Account("Sharm", "Sunthar", 109);
 
 		s.add(109, account);
@@ -24,7 +27,7 @@ public class test {
 	@Test
 	public void removeTest() {
 
-		Service s = new Service();
+		
 		Account account = new Account("Sharm", "Sunthar", 109);
 		Account account2 = new Account("Sharm2", "Sunthar", 110);
 
@@ -41,7 +44,7 @@ public class test {
 
 	@Test
 	public void getHmapTest() {
-		Service s = new Service();
+		
 		Account account = new Account("Sharm", "Sunthar", 109);
 
 		s.add(109, account);
@@ -50,6 +53,13 @@ public class test {
 
 		s.remove(109);
 		assertEquals(null, s.getHmapAccount(109));
+	}
+	
+	@Test
+	@Ignore
+	public void xmlTest() {
+		Account account = new Account("Sharm", "Sunthar", 109);
+		s.xml(account);
 	}
 
 }
