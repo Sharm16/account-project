@@ -11,11 +11,10 @@ import com.qa.account.Service;
 public class test {
 
 	Service s = new Service();
-	
+
 	@Test
 	public void accountTest() {
 
-		
 		Account account = new Account("Sharm", "Sunthar", 109);
 
 		s.add(109, account);
@@ -27,7 +26,6 @@ public class test {
 	@Test
 	public void removeTest() {
 
-		
 		Account account = new Account("Sharm", "Sunthar", 109);
 		Account account2 = new Account("Sharm2", "Sunthar", 110);
 
@@ -44,7 +42,7 @@ public class test {
 
 	@Test
 	public void getHmapTest() {
-		
+
 		Account account = new Account("Sharm", "Sunthar", 109);
 
 		s.add(109, account);
@@ -54,10 +52,10 @@ public class test {
 		s.remove(109);
 		assertEquals(null, s.getHmapAccount(109));
 	}
+
 	@Test
 	public void searchTest() {
 
-		
 		Account account = new Account("Sharm", "Sunthar", 109);
 		Account account1 = new Account("Sharm", "Sunthar", 112);
 		Account account2 = new Account("Sharm", "Sunthar", 111);
@@ -67,18 +65,16 @@ public class test {
 		s.add(110, account2);
 		s.add(111, account3);
 		s.add(112, account);
-		
 
-		
-		assertEquals(3,s.search2("Sharm"));
+		assertEquals(3, s.search2("Sharm"));
 
 	}
-	
-//	@Test
-//	@Ignore
-//	public void xmlTest() {
-//		Account account = new Account("Sharm", "Sunthar", 109);
-//		s.xml(account);
-//	}
+
+	// @Test
+	// @Ignore
+	// public void xmlTest() {
+	// Account account = new Account("Sharm", "Sunthar", 109);
+	// s.xml(account);
+	// }
 
 }
