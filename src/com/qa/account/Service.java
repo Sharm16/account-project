@@ -1,6 +1,9 @@
 package com.qa.account;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.IntStream;
 import java.io.File;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -33,6 +36,24 @@ public class Service {
 		
 		return new JSONObject(h);
 		
+		
+	}
+	
+	public int search(String name) {
+		int count =0;
+		for (Account a:hmap.values()) {
+			if (a.getFirstName().equals(name)) {
+				count+=1;
+			}
+		}
+		return count;
+	}
+	public int search2(String name) {
+		
+		 return (int) hmap.entrySet()
+		.stream()
+		.filter(a->a.getValue().getFirstName().equals(name))
+		.count();
 		
 	}
 	
